@@ -1,0 +1,71 @@
+.pace {
+  display: none;
+}
+
+.main-style {
+  min-height: 100vh;
+  /* background: url(../img/cover/cover-scrum-board.png) no-repeat fixed; */
+  background-image: linear-gradient(#16213e 80%, #533483 100%);
+  background-size: 360px;
+  background-position: right bottom;
+  background-attachment: fixed;
+}
+
+#button {
+  background-color: #e94560;
+}
+
+.color {
+  background-image: linear-gradient(#e94560, #0f3460);
+}
+
+.colorc {
+  background-image: linear-gradient(#e94560, #0f3460);
+}
+
+.color-trans {
+  background-color: rgba(245, 245, 220, 0);
+}
+
+.hight {
+  background-color: #e94560;
+  border-radius: 3px;
+}
+
+.feature {
+  background-color: white;
+  color: #e94560;
+  border-radius: 3px;
+}
+
+.cancel {
+  background-color: white;
+  color: #e94560;
+}
+
+:hover .cancel {
+  background-color: white;
+  color: #e94560;
+}
+
+.save {
+  background-color: #e94560;
+  color: white;
+  border: 0;
+}
+
+:hover .save {
+  background-color: #e94560;
+  color: white;
+  border: 0;
+}
+/* #pargraph{
+  display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
+/* #to-do-tasks{
+  max-height:   100px;
+} */
