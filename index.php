@@ -23,7 +23,7 @@
 	<!-- ================== END core-css ================== -->
 </head>
 
-<body>
+<body style=" font-family: 'Inconsolata', monospace; >
 
 	<!-- BEGIN #app -->
 	<div id="app" class="app-without-sidebar ">
@@ -58,9 +58,32 @@
 
 						<div class=" " id="to-do-tasks">
 							<!-- TO DO TASKS HERE -->
+		
 							<?php 
-							getTasks(1);
-							?>
+							  $res = getTasks(1);
+							  if(mysqli_num_rows($res) > 0){
+								//
+								while($row = mysqli_fetch_assoc($res)){
+					?>
+									
+										<?=$row["id"]?>
+										<button id="<?=$row["id"]?>" class="p-3 border-0  text-white-50  border-bottom border-white mt-2 color-trans col-12" onclick="pup(this.id)">                         
+													<div class="text-start  ">
+														<div class=" "><i class=" < bi bi-question-circle-fill text-success me-2" dataTitle="<?=$row["title"]?>"  id="<?=$row["id"]."title"?>"></i><?=$row["title"]?></div>
+														<div class="">
+															<div class=" ms-4"  datatime="<?=$row["task_datetime"]?>"  id="<?=$row["id"]."date"?>">#<?=$row["id"]?> created in <?=$row["task_datetime"]?></div>
+															<div class=" ms-4  title="" dataDescription="<?=$row["description"]?>" id="<?=$row["id"]."description"?>" ><?=substr($row["description"],0,50)?>...</div>
+														</div>
+														<div class="mt-2 ms-4 text-start">
+															<span class="hight  text-white p-1 me-2 " datatype="<?=$row["type"]?>" id="<?=$row["id"]."type"?>"><?=$row["type"]?></span>
+															<span class="feature p-1" dataprioritie="<?=$row["priority_id"]?>" id="<?=$row["id"]."prioritie"?>"><?=$row["prioritie"]?></span>
+															<span class="d-none status" datastatus="<?=$row["status_id"]?>"  id="<?=$row["id"]."status"?>" > <?=$row["status"]?> </span>
+														</div>
+													</div>
+												</button>
+						<?php		
+							}}
+						?>
 						</div>
 
 					</div>
@@ -72,14 +95,31 @@
 						</div>
 						<div class="" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
-							
 							<?php 
-							getTasks(2);
-							?>
-
-							
-						
-							
+							  $res = getTasks(2);
+							  if(mysqli_num_rows($res) > 0){
+								//
+								while($row = mysqli_fetch_assoc($res)){
+					?>
+									
+										<?=$row["id"]?>
+										<button id="<?=$row["id"]?>" class="p-3 border-0  text-white-50  border-bottom border-white mt-2 color-trans col-12" onclick="pup(this.id)">                         
+													<div class="text-start  ">
+														<div class=" "><i class=" < spinner-border spinner-border-sm text-success me-2" dataTitle="<?=$row["title"]?>"  id="<?=$row["id"]."title"?>"></i><?=$row["title"]?></div>
+														<div class="">
+															<div class=" ms-4"  datatime="<?=$row["task_datetime"]?>"  id="<?=$row["id"]."date"?>">#<?=$row["id"]?> created in <?=$row["task_datetime"]?></div>
+															<div class=" ms-4  title="" dataDescription="<?=$row["description"]?>" id="<?=$row["id"]."description"?>" ><?=substr($row["description"],0,50)?>...</div>
+														</div>
+														<div class="mt-2 ms-4 text-start">
+															<span class="hight  text-white p-1 me-2 " datatype="<?=$row["type"]?>" id="<?=$row["id"]."type"?>"><?=$row["type"]?></span>
+															<span class="feature p-1" dataprioritie="<?=$row["priority_id"]?>" id="<?=$row["id"]."prioritie"?>"><?=$row["prioritie"]?></span>
+															<span class="d-none status" datastatus="<?=$row["status_id"]?>"  id="<?=$row["id"]."status"?>" > <?=$row["status"]?> </span>
+														</div>
+													</div>
+												</button>
+						<?php		
+							}}
+						?>
 						</div>
 					</div>
 				</div>
@@ -93,8 +133,30 @@
 						<div class=" " id="done-tasks">
 							<!-- DONE TASKS HERE -->
 							<?php 
-							getTasks(3);
-							?>
+							  $res = getTasks(3);
+							  if(mysqli_num_rows($res) > 0){
+								//
+								while($row = mysqli_fetch_assoc($res)){
+					?>
+									
+										<?=$row["id"]?>
+										<button id="<?=$row["id"]?>" class="p-3 border-0  text-white-50  border-bottom border-white mt-2 color-trans col-12" onclick="pup(this.id)">                         
+													<div class="text-start  ">
+														<div class=" "><i class=" < bi bi-check-circle-fill text-success me-2" dataTitle="<?=$row["title"]?>"  id="<?=$row["id"]."title"?>"></i><?=$row["title"]?></div>
+														<div class="">
+															<div class=" ms-4"  datatime="<?=$row["task_datetime"]?>"  id="<?=$row["id"]."date"?>">#<?=$row["id"]?> created in <?=$row["task_datetime"]?></div>
+															<div class=" ms-4  title="" dataDescription="<?=$row["description"]?>" id="<?=$row["id"]."description"?>" ><?=substr($row["description"],0,50)?>...</div>
+														</div>
+														<div class="mt-2 ms-4 text-start">
+															<span class="hight  text-white p-1 me-2 " datatype="<?=$row["type"]?>" id="<?=$row["id"]."type"?>"><?=$row["type"]?></span>
+															<span class="feature p-1" dataprioritie="<?=$row["priority_id"]?>" id="<?=$row["id"]."prioritie"?>"><?=$row["prioritie"]?></span>
+															<span class="d-none status" datastatus="<?=$row["status_id"]?>"  id="<?=$row["id"]."status"?>" > <?=$row["status"]?> </span>
+														</div>
+													</div>
+												</button>
+						<?php		
+							}}
+						?>
 						</div>
 					</div>
 				</div>

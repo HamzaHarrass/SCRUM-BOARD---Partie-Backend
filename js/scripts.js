@@ -26,21 +26,19 @@ function popupAddTask(){
     buttonEdit.style.display = 'block';
     buttonDelete.style.display = 'block';
     
-     const title = document.getElementById(id+'t')
-     const description = document.getElementById(id+'d')
+     const title = document.getElementById(id+'title')
+     const description = document.getElementById(id+'description')
      const date = document.getElementById(id+'date')
      const type = document.getElementById(id+'type')
      const status = document.getElementById(id+'prioritie')
      
-     alert(id+'date')
-
-
+     
     document.getElementById("modalid").value =id;
-    document.getElementById("recipient").value =document.getElementById(id+"t").getAttribute("dataTitle");
+    document.getElementById("recipient").value =document.getElementById(id+"title").getAttribute("dataTitle");
     document.getElementById("Type"+ document.getElementById(id+"type").getAttribute("datatype")).checked =true ;  
     document.getElementById("Priority").value = document.getElementById(id+"prioritie").getAttribute("dataprioritie");
     document.getElementById("Status").value = document.getElementById(id+"status").getAttribute("datastatus");
-    document.getElementById("message-text").value = document.getElementById(id+"d").getAttribute("dataDescription");
+    document.getElementById("message-text").value = document.getElementById(id+"description").getAttribute("dataDescription");
     document.getElementById("Date").value = document.getElementById(id+"date").getAttribute("datatime");
 
   }
